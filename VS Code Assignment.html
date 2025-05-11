@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Favourite Music Video & Animation</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #animationBox {
+      width: 100px;
+      height: 100px;
+      background-color: #ffeeee;
+      margin: 30px auto;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Check out my favourite music video and JS animation</h1>
+
+  <h2>Music Video</h2>
+  <iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/doUgXDKTmKI?si=zqqNDWisLIlnc3W6" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+  </iframe>
+
+  <h2>JavaScript Animation</h2>
+  <div id="animationBox"> Let's Vibe!
+    <video width="50" height="50" src="https://cdn-icons-mp4.flaticon.com/512/16768/16768838.mp4"></video>
+  </div>
+
+  <script>
+ const box = document.getElementById('animationBox');
+    let position = 0;
+    let direction = 1;
+
+    function animate() {
+      
+      if (position > 300 || position < 0) {
+        direction *= -1;
+      }
+      position += direction * 2;
+      box.style.left = position + 'px';
+
+      requestAnimationFrame(animate); 
+    }
+
+    animate();
+  </script>
+
+</body>
+</html>
